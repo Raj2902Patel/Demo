@@ -44,7 +44,7 @@ class _RazorPayState extends State<RazorPay> {
 
   void openCheckout() async {
     var options = {
-      'key': "rzp_test_zmEmTjiie5noU8",
+      'key': "",
       'amount': double.parse(_amountController.text) * 100,
       'name': 'Buy Me Coffee!',
       'description': 'Flutter Course',
