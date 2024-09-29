@@ -4,6 +4,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
+import 'package:random_string/random_string.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:razorpay_integration/pages/success_page.dart';
 
@@ -19,6 +20,8 @@ class _RazorPayState extends State<RazorPay> {
   late Razorpay _razorPay;
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
+    print(
+        "Success -> ${response.orderId} -> ${response.paymentId} -> ${response.signature}");
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => const SuccessPage()));
   }
