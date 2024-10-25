@@ -31,18 +31,17 @@ class _RazorPayState extends State<RazorPay> {
   }
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
-    print(response);
-    verifySignature(
-      signature: response.signature,
-      paymentId: response.paymentId,
-      orderId: response.orderId,
-    );
-
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
         builder: (context) => const SuccessPage(),
       ),
+    );
+    print(response);
+    verifySignature(
+      signature: response.signature,
+      paymentId: response.paymentId,
+      orderId: response.orderId,
     );
   }
 
